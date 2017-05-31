@@ -19,20 +19,25 @@ namespace CalculatorPrestamos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double capital, interes, meses, Resultado;
+            double capital, interes, anios, Resultado;
             string cadena = "";
             capital = Convert.ToDouble(textBox1.Text);
             interes = Convert.ToDouble(textBox2.Text);
-            meses = Convert.ToDouble(textBox3.Text);
+            anios = Convert.ToDouble(textBox3.Text);
 
 
-            for (int i = 1; i <= meses; i++)
+            for (int i = 1; i <= anios; i++)
             {
 
                 Resultado = (capital * (1 + (interes / 100) * i));
                 cadena += (i + "\t" + string.Format("{0:C}", Resultado + "\r\n"));
             }
             txtResult.Text = cadena;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
